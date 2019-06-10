@@ -1,5 +1,4 @@
-#!/bin bash
-
+#!/usr/bin/env bash
 
 # Make vim the default editor.
 export EDITOR='vim';
@@ -27,8 +26,20 @@ shopt -s histappend
 
 
 # Prefer US English, fr for locales and use UTF-8
-export LC_ALL="fr_FR.UTF-8"
-export LANG="en_US"
+export LANG="en_US.UTF-8"
+export LANGUAGE=
+export LC_CTYPE="en_US.UTF-8"
+export LC_NUMERIC="fr_FR.UTF-8"
+export LC_TIME="fr_FR.UTF-8"
+export LC_COLLATE="fr_FR.UTF-8"
+export LC_MONETARY="fr_FR.UTF-8"
+export LC_MESSAGES="fr_FR.UTF-8"
+export LC_PAPER="fr_FR.UTF-8"
+export LC_NAME="fr_FR.UTF-8"
+export LC_ADDRESS="fr_FR.UTF-8"
+export LC_TELEPHONE="fr_FR.UTF-8"
+export LC_MEASUREMENT="fr_FR.UTF-8"
+export LC_IDENTIFICATION="fr_FR.UTF-8"
 
 
 # If set, the pattern "**" used in a pathname expansion context will

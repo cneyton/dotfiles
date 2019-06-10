@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export DOTFILES=$HOME/.dotfiles
 
 # make less more friendly for non-text input files, see lesspipe(1)
