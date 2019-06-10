@@ -40,3 +40,6 @@ set convert-meta off
 
 # Disable ^C echo
 set echo-control-characters off
+
+# Disable bell
+set bell-style none
