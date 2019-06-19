@@ -34,6 +34,10 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " Close  vim is the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+
+Plugin 'scrooloose/nerdcommenter'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
