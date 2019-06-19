@@ -8,6 +8,13 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
+:let mapleader = ','
+
+"------------------------------------------------------------
+" Vundle {{{1
+"
+" Manage vim plugins
+
 filetype off                  " required
 
 "set the runtime path to include Vundle and initialize
@@ -21,8 +28,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
 
+" Nerdtree
 Plugin 'scrooloose/nerdtree'
-
+nnoremap <leader>n :NERDTreeToggle<CR>
+" Close  vim is the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
