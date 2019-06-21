@@ -26,6 +26,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Solarized colorscheme
+Plugin 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+set t_Co=256
+
+" YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
 " Nerdtree
@@ -34,7 +41,7 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " Close  vim is the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
+" NerdCommenter
 Plugin 'scrooloose/nerdcommenter'
 
 
@@ -49,9 +56,11 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
  
-" Enable syntax highlighting
+" Enable syntax highlighting and colorscheme
 syntax on
- 
+set background=dark
+colorscheme solarized
+
 "------------------------------------------------------------
 " Must have options {{{1
 "
@@ -213,15 +222,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 
-"------------------------------------------------------------
-" Colorscheme {{{1
-"
-" Use the solarized dark theme
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-set t_Co=256
-set background=dark
-colorscheme solarized
 
 
 
