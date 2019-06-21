@@ -122,6 +122,9 @@ set modeline
 set ignorecase
 set smartcase
  
+" Modify grep with colors and the rnis option
+set grepprg=grep\ -rnis\ --color=always\ $*\ /dev/null
+
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
  
