@@ -44,6 +44,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " NerdCommenter
 Plugin 'scrooloose/nerdcommenter'
 
+" Agvim
+Plugin 'rking/ag.vim'
+
+" DelimitMate
+Plugin 'Raimondi/delimitMate'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
