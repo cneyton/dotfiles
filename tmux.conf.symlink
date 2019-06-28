@@ -30,7 +30,7 @@ setw -g aggressive-resize on
 # bind ^A select-pane -t:.+
 
 # Center the window list
-set -g status-justify centre
+#set -g status-justify centre
 
 # make window/pane index start with 1
 set -g base-index 1
