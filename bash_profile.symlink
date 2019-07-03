@@ -12,6 +12,9 @@ source "$DOTFILES/prompt.sh"
 source "$DOTFILES/alias.sh"
 source "$DOTFILES/function.sh"
 
+if [[ -a ~/.localrc ]]; then
+    source ~/.localrc
+fi
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -55,3 +58,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
