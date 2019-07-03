@@ -166,7 +166,7 @@ set t_vb=
 set mouse=a
  
 " Set the command window height to 2 lines, to avoid many cases of having to
-" "press <Enter> to continue"
+" press <Enter> to continue
 set cmdheight=2
  
 " Display line numbers on the left
@@ -187,8 +187,11 @@ set cursorline
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
-" show matching braces
+" Show matching braces
 set showmatch
+
+" Use the system clipboard
+set clipboard=unnamed
 
 
 "------------------------------------------------------------
