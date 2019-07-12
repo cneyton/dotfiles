@@ -98,5 +98,5 @@ source ~/.dotfiles/tmux-colors-solarized/tmuxcolors-256.conf
 
 # tmux-mem-cpu-load
 set -g status-interval 2
-set -g status-left "[#S] #(tmux-mem-cpu-load -i2 -a0 -m0)] "
+set -g status-left "[#S] #(tmux-mem-cpu-load -i2 -a0 -m0) | "
 set -g status-left-length 60
