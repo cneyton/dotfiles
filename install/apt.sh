@@ -15,6 +15,8 @@ formulas=(
     htop
     cmake
     exuberant-ctags
+    build-essential
+    python3-dev
 )
 
 for formula in "${formulas[@]}"; do
