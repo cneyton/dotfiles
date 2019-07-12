@@ -97,7 +97,7 @@ fi;
 
 # Highlight the hostname when connected via SSH.
 if [[ "${SSH_TTY}" ]]; then
-	hostStyle="${bold}${red}";
+	hostStyle="${purple}";
 else
 	hostStyle="${yellow}";
 fi;
