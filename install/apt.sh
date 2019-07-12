@@ -17,6 +17,7 @@ formulas=(
     exuberant-ctags
     build-essential
     python3-dev
+    xclip
 )
 
 for formula in "${formulas[@]}"; do
