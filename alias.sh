@@ -11,7 +11,7 @@ alias a4="awk '{print \$4}'"
 
 # Bash aliases
 alias ls='ls --color=auto'
-alias ll='ls -alF'
+alias ll='ls -alhF'
 alias l.='ls -d .*'
 alias la='ls -A'
 alias l='ls -CF'
