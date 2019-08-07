@@ -235,6 +235,8 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 " Mapping for ctags
 nnoremap <C-G> <C-]>
+nnoremap <C-G><C-G> g<C-]>
+
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
