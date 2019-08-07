@@ -196,6 +196,11 @@ set showmatch
 " Use the system clipboard
 set clipboard=unnamed
 
+" Trailing whitespace are forbidden, so highlight them.
+highlight ForbiddenWhitespace ctermbg=red guibg=red
+autocmd InsertLeave * match ForbiddenWhitespace /\s\+$/
+" Do not highlight spaces at the end of line while typing on that line.
+autocmd InsertEnter * match ForbiddenWhitespace /\s\+\%#\@<!$/
 
 "------------------------------------------------------------
 " Indentation options {{{1
