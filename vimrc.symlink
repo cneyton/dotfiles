@@ -218,8 +218,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-"C/C++ identation
-set cindent
+" C/C++ identation
+"set cindent
 set cinoptions=(0
 
 " Allow tabs in Makefiles.
