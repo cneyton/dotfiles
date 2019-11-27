@@ -73,6 +73,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias GG='grep -rnIs --color'
 
+# Make aliases
+alias make='make -j5'
 
 # Python scripts
 alias colorcat='pygmentize'
