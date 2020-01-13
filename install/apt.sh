@@ -21,10 +21,10 @@ formulas=(
 )
 
 for formula in "${formulas[@]}"; do
-    if dpkg -l "$formula" > /dev/null 2>&1; then
+    if dpkg -s "$formula" > /dev/null 2>&1; then
         echo "$formula already installed... skipping."
     else
         echo "installing $formula..."
-        sudo apt install "$formula" > /dev/null 2>&1
+        sudo apt install -y "$formula" > /dev/null 2>&1
     fi
 done
