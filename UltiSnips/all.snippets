@@ -1,0 +1,8 @@
+global !p
+from vimsnippets import get_comment_format
+endglobal
+
+snippet todo "TODO comment" bw
+`!p snip.rv=get_comment_format()[0]` TODO: $0 <`!v strftime('%d-%m-%y')`, `!v g:snips_author`> `!p snip.rv=get_comment_format()[2]`
+endsnippet
+

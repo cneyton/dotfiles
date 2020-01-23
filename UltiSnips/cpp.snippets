@@ -1,0 +1,22 @@
+snippet cl "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+public:
+    ${1/(\w+).*/$1/}(${2:arguments});
+    virtual ~${1/(\w+).*/$1/}();
+
+private:
+    ${0}
+};
+endsnippet
+
+snippet ns "namespace .. (namespace)"
+namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
+{
+${VISUAL}$0
+}${1/.+/ \/* /m}namespace $1${1/.+/ *\//m}
+endsnippet
+
+snippet cdz "common die zero"
+common_die_zero(logger_, ret, ${1}, "${2:log}");
+endsnippet

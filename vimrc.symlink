@@ -53,6 +53,21 @@ Plugin 'Raimondi/delimitMate'
 
 " CtrlP
 Plugin 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_working_path_mode = 'wa'
+
+" Snippets
+" Snippets engine
+Plugin 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-space>"
+let g:UltiSnipsJumpBackwardTrigger="<c-s-space>"
+let g:UltiSnipsEditSplit="vertical" " let :UltiSnipsEdit split the window.
+let g:snips_author="cneyton"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/UltiSnips']
+" Snippets library
+Plugin 'honza/vim-snippets'
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
