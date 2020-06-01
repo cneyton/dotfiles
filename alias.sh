@@ -24,7 +24,7 @@ alias cd.='cd $(readlink -f .)'    # Go to real dir (i.e. if current dir is link
 
 
 # Ctags
-alias ctags="ctags -R --c-kinds=+p --fields=+iaS --extra=+q --links=no"
+alias ctags="universal-ctags -R --fields=+iaS --extras=+q --links=no"
 
 
 # Date
