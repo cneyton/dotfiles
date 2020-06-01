@@ -1,0 +1,4 @@
+--recurse=yes
+--exclude=build
+--exclude=dependencies
+--links=no
