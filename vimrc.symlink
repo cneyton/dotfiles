@@ -63,7 +63,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-space>"
 let g:UltiSnipsJumpBackwardTrigger="<c-s-space>"
 let g:UltiSnipsEditSplit="vertical" " let :UltiSnipsEdit split the window.
 let g:snips_author="cneyton"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/UltiSnips', "UltiSnips"]
 " Snippets library
 Plugin 'honza/vim-snippets'
 
@@ -197,7 +197,7 @@ set relativenumber
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
- 
+
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
