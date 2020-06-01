@@ -220,9 +220,12 @@ autocmd InsertLeave * match ForbiddenWhitespace /\s\+$/
 autocmd InsertEnter * match ForbiddenWhitespace /\s\+\%#\@<!$/
 
 "You complete me highlighting scheme
-set signcolumn=no
-highlight YcmErrorSection ctermbg=DarkRed guibg=DarkRed
-highlight YcmWarningSection ctermbg=DarkMagenta guibg=DarkMagenta
+set signcolumn=yes
+"highligh SignColumn ctermbg=Black
+highligh clear SignColumn
+highligh clear VertSplit
+"highlight YcmErrorSection ctermbg=DarkRed guibg=DarkRed
+"highlight YcmWarningSection ctermbg=DarkMagenta guibg=DarkMagenta
 
 " Exclude files and directories from search
 set wildignore+=*.so,*.swp,*.zip,*/build/*
