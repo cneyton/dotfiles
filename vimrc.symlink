@@ -76,7 +76,7 @@ nnoremap <leader>gj :diffget //3<CR>
 
 " Flog
 Plugin 'rbong/vim-flog'
-nnoremap <leader>gl :Flog<CR>
+nnoremap <leader>gl :Flog -date=short -format=%h%Creset\ (%cr)\ %Cblue%s\ %Cred%d%Cgreen\ %an%Creset<CR>
 
 " Powerline
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
