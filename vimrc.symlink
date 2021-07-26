@@ -83,6 +83,9 @@ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Mode already shown by powerline
 set noshowmode
 
+" Doxygen
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
