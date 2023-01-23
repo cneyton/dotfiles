@@ -9,8 +9,8 @@ echo "Installing dotfiles."
 echo "Initializing submodule(s)"
 git submodule update --init --recursive
 
-source install/link.sh
 source install/apt.sh
+source install/link.sh
 source install/vim.sh
 
 echo "Done. Reload your terminal."

@@ -1,31 +1,21 @@
 #!/usr/bin/env bash
 
-# Make vim the default editor.
+# folder for startup files
+export DOTFILES=$HOME/.dotfiles
+
+# make vim the default editor.
 export EDITOR='vim';
 
-# Keep showing man page after exit
+# keep showing man page after exit
 export MANPAGER='less -X';
-
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-
-# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+# make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
 export PYTHONIOENCODING='UTF-8';
 
-
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-export HISTCONTROL=ignoreboth
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTSIZE=100000
-export HISTFILESIZE=100000
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-
-# Prefer US English, fr for locales and use UTF-8
+# prefer US English, fr for locales and use UTF-8
 export LANG="en_US.UTF-8"
 export LANGUAGE=
 export LC_CTYPE="en_US.UTF-8"
@@ -41,20 +31,16 @@ export LC_TELEPHONE="fr_FR.UTF-8"
 export LC_MEASUREMENT="fr_FR.UTF-8"
 export LC_IDENTIFICATION="fr_FR.UTF-8"
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-shopt -s globstar
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
-
-# Autocorrect typos in path names when using `cd`
-shopt -s cdspell
-
-
-# Do not autocomplete when accidentally pressing Tab on an empty line.
-shopt -s no_empty_cmd_completion
-
-
-# Check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022

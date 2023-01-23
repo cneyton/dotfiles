@@ -1,6 +1,11 @@
-# Ag aliases
-#alias ag='ag --nogroup --color-match "1;31" --color-line-number "1;35" --color-path "1;34" '
+if [ -x /usr/bin/dircolors ]; then
+    color_support=yes
+fi
 
+# Ag aliases
+#if [ -n color_support ]; then
+#    alias ag='ag --nogroup --color-match "1;31" --color-line-number "1;35" --color-path "1;34" '
+#fi
 
 # Awk aliases
 alias a1="awk '{print \$1}'"
@@ -10,7 +15,9 @@ alias a4="awk '{print \$4}'"
 
 
 # Bash aliases
-alias ls='ls --color=auto'
+if [ -n color_support ]; then
+    alias ls='ls --color=auto'
+fi
 alias ll='ls -alhF'
 alias l.='ls -d .*'
 alias la='ls -A'
@@ -38,7 +45,6 @@ alias gdriveumount='fusermount -u /home/cneyton/gdrive'
 
 # Git aliases
 # Set Git language to English
-alias git='LANG=en_GB git'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbs='for branch in $(git branch -r | grep -v HEAD);do echo -e $(git show --format="%ci" $branch | head -n 1) \\t$branch; done | sort -r'
@@ -68,10 +74,12 @@ alias gru='git remote  update  -p'
 
 
 # Grep aliases
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias GG='grep -rnIs --color'
+if [ -n color_support ]; then
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+alias GG='grep -rnIs'
 
 # Make aliases
 alias make='make -j5'
@@ -107,3 +115,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias aliases="alias | sed 's/=.*//'"
 alias functions="declare -f | grep '^[a-z].* ()' | sed 's/{$//'"
 alias paths='echo -e ${PATH//:/\\n}'
+
+
+unset color_support
