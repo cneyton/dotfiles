@@ -18,6 +18,7 @@ formulas=(
     build-essential
     python3-dev
     xclip
+    fonts-powerline
 )
 
 for formula in "${formulas[@]}"; do
