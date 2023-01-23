@@ -1,9 +1,6 @@
 [submodule "tmux-colors-solarized"]
 	path = tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
-[submodule "dircolors-solarized"]
-	path = dircolors-solarized
-	url = https://github.com/seebi/dircolors-solarized
 [submodule "tmux-mem-cpu-load"]
 	path = tmux-mem-cpu-load
 	url = https://github.com/thewtex/tmux-mem-cpu-load.git
