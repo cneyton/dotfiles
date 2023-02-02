@@ -109,10 +109,11 @@ __print_prompt()
     local brwhite="\e[97m"    # base3
 
     if [ "$color_prompt" = yes ]; then
-        PS1="\[${bold}\]"
-        PS1+="\[${yellow}\]${debian_chroot:+($debian_chroot)}\u@\h"
-        PS1+="\[${white}\]:"
-        PS1+="\[${blue}\]\w"               # working directory full path
+        PS1="\[${bold}\]\[${yellow}\]${debian_chroot:+($debian_chroot)}\u " # username
+        PS1+="\[${reset}\]\[${white}\]at "
+        PS1+="\[${bold}\]\[${yellow}\]\h"  # hostname
+        PS1+="\[${reset}\]\[${white}\]:"
+        PS1+="\[${bold}\]\[${blue}\]\w"    # working directory full path
         PS1+="\[${reset}\]\[${brwhite}\]"  # removing bold
         if [ -n "$git_prompt" ]; then
             PS1+="\$(__git_ps1 ' (%s)')"   # __git_ps1 output
@@ -126,7 +127,7 @@ __print_prompt()
 
 __print_prompt
 
-unset color_prompt force_color_prompt git_prommpt
+unset color_prompt force_color_prompt git_prompt
 
 # If this is an xterm set the title to wd
 case "$TERM" in
