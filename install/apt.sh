@@ -19,6 +19,7 @@ formulas=(
     python3-dev
     xclip
     fonts-powerline
+    luajit
 )
 
 for formula in "${formulas[@]}"; do
