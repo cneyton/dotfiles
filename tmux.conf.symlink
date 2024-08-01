@@ -1,14 +1,10 @@
 # tmux display things in 256 colors
-set -g default-terminal "tmux-256color"
+set -g default-terminal "screen-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
 
-set -g history-limit 20000
-
-# Unbind default prefix and set it to Ctrl+q
+# Unbind default prefix and set it to Ctrl+a
 unbind C-b
-set -g prefix C-q
-bind C-q send-prefix
-# for nested tmux sessions
-bind-key q send-prefix
+set -g prefix C-a
 
 # Activity Monitoring
 # Monitor for activity in the window.
@@ -16,65 +12,82 @@ bind-key q send-prefix
 setw -g monitor-activity off
 set -g visual-activity off
 
+# increase scrollback buffer size
+set -g history-limit 20000
+
+# Increase display time
+set -g display-time 4000
+
 # Rather than constraining window size to the maximum size of any client
 # connected to the *session*, constrain window size to the maximum size of any
 # client connected to *that window*. Much more reasonable.
 setw -g aggressive-resize on
 
-# make delay shorter
-#set -sg escape-time 0
-
-# cycle through panes
-# unbind C-a
-# unbind o # this is the default key for cycling panes
-# bind ^A select-pane -t:.+
+# Make escape delay shorter for vim
+set -g escape-time 50
 
 # Center the window list
 #set -g status-justify centre
 
-# make window/pane index start with 1
+# Make window/pane index start with 1
 set -g base-index 1
 setw -g pane-base-index 1
 
-# automatically renumber tmux windows
+# Automatically renumber tmux windows
 set -g renumber-windows on
+
+# Redraw the status line more often
+set -g status-interval 2
+
+# Focus events enabled for terminals that support them
+set -g focus-events on
 
 # Set titles
 #set-option -g set-titles on
 #set-option -g set-titles-string "#T - #W"
 #set-window-option -g automatic-rename on
 
-# enable mouse support for switching panes/windows
+# Enable mouse support for switching panes/windows
 set -g mouse on
 
-# set vi mode for copy mode
+# Set vi mode for copy mode
 set -g mode-keys vi
 
 #--------------------------------------------------------------------
 # Key Bindings
-
+#--------------------------------------------------------------------
 # reload config file
 bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 
-# split window
-bind-key ù split-window -h
-bind-key ! split-window -v
+# Split window
+bind - split-window -h
+bind / split-window -v
+
+# Easier and faster switching between next/prev window
+bind C-p previous-window
+bind C-n next-window
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
+# Go to last window
+bind a last-window
 
 # synchronize all panes in a window
 bind y setw synchronize-panes
 
 # tile all windows
-unbind =
 bind = select-layout tiled
 
 # pane movement shortcuts
-bind-key h select-pane -L
-bind-key j select-pane -D
-bind-key k select-pane -U
-bind-key l select-pane -R
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
 
-#bind -r C-h select-window -t :-
-#bind -r C-l select-window -t :+
+# cycle through panes
+# unbind C-a
+# unbind o # this is the default key for cycling panes
+# bind ^A select-pane -t:.+
 
 # Resize pane shortcuts
 bind -r H resize-pane -L 10
@@ -93,6 +106,5 @@ bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "xclip -sel clip -i"
 source ~/.dotfiles/tmux-colors-solarized/tmuxcolors-256.conf
 
 # tmux-mem-cpu-load
-set -g status-interval 2
 set -g status-left "[#S] #(tmux-mem-cpu-load -i2 -a0 -m0) | "
 set -g status-left-length 60
